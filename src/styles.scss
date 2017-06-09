@@ -1,0 +1,16 @@
+#app {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.global-footer__copyright a {
+  width: 110px;
+  padding-top: 80px;
+  background-size: 80px auto;
+  background-position: 50% 10px;
+}

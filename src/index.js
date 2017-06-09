@@ -1,17 +1,19 @@
 import Vue from 'vue'
-import {FormElements} from 'dit-vue'
+import {Global, Layout} from 'dit-vue'
+import Login from './components/Login.vue'
+
+import './styles.scss'
 
 new Vue({
   el: '#app',
   data: {
-    buttonText: 'Press the button',
+    phase: 'beta',
   },
   components: {
-    ...FormElements
+    ...Global,
+    ...Layout,
+    Login,
   },
   methods: {
-    handleButtonPress: function () {
-      this.buttonText = this.buttonText.split('').reverse().join('')
-    }
   }
 })

@@ -21,7 +21,21 @@ module.exports = {
         options: {
           name: '[name].[ext]'
         }
-      }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            scss: 'vue-style-loader!css-loader?sourceMap!sass-loader?sourceMap!postcss-loader?sourceMap',
+            postcss: 'vue-style-loader!css-loader?sourceMap!postcss-loader?sourceMap',
+          }
+        }
+      },
+      {
+        test: /\.s?css$/,
+        loader: 'vue-style-loader!css-loader?sourceMap!sass-loader?sourceMap!postcss-loader?sourceMap'
+      },
     ]
   },
   resolve: {
