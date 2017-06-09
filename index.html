@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Webpack example</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #app {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <img src="./dist/crest.svg" alt="" width="200">
+        <h1>Example of using Webpack to build client JS</h1>
+        <p>
+          <dit-button @click.native="handleButtonPress">{{buttonText}}</dit-button>
+        </p>
+      </div>
+    </div>
+    <script src="./dist/build.js"></script>
+  </body>
+</html>
