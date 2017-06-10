@@ -2,10 +2,11 @@
 
 ## Using
 
-Clone repo:
+Clone repo and install dependencies:
 
 ```
 git clone https://github.com/tyom/dh-proto.git
+npm install
 ```
 
 Run dev server:
