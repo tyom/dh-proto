@@ -2,10 +2,10 @@
 
 ## Using
 
-Install package:
+Clone repo:
 
 ```
-npm i tyom/dit-proto
+git clone https://github.com/tyom/dh-proto.git
 ```
 
 Run dev server:
