@@ -48,7 +48,7 @@
   .login {
     max-width: 40em;
     padding: 20px;
-    margin: 80px auto;
+    margin: 50px auto;
   }
 
   .login__heading {
