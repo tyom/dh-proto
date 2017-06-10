@@ -1,3 +1,7 @@
+html {
+  background-color: #dee0e2;
+}
+
 #app {
   display: flex;
   flex-flow: column;
@@ -6,6 +10,7 @@
 
 main {
   flex-grow: 1;
+  background-color: #fff;
 }
 
 .global-footer__copyright a {
