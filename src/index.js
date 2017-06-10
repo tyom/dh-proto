@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 import VueRouter from 'vue-router'
 import {Global, Layout} from 'dit-vue'
 
@@ -23,6 +24,7 @@ const mutations = {
 const store = new Vuex.Store({
   state,
   mutations,
+  plugins: [createPersistedState()],
 })
 
 const router = new VueRouter({
