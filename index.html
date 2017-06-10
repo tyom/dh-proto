@@ -7,14 +7,17 @@
   <body>
     <div id="app">
       <global-header>
-        <h1>Data Hub</h1>
+        <router-link to="/" class="logo">
+          <h1>Data Hub</h1>
+        </router-link>
       </global-header>
       <main>
         <container>
           <phase-banner :tag="phase">
             This is a new service – your <a href="#">feedback</a> will help us to improve it.
           </phase-banner>
-          <login></login>
+
+          <router-view></router-view>
         </container>
       </main>
       <global-footer></global-footer>
