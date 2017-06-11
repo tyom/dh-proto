@@ -47,7 +47,6 @@
 <style lang="scss">
   .login {
     max-width: 40em;
-    padding: 20px;
     margin: 50px auto;
   }
 

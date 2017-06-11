@@ -4,12 +4,15 @@
     <main-header>
       <h1>Welcome, Alex!</h1>
     </main-header>
+    <p>
+      <dit-button @click.native="handleLogout">Log out</dit-button>
+    </p>
   </div>
   <login v-else></login>
 </template>
 
 <script>
-  import {Global} from 'dit-vue'
+  import {Global, FormElements} from 'dit-vue'
   import Login from '../components/Login.vue'
   import MainHeader from '../components/MainHeader.vue'
 
@@ -22,8 +25,14 @@
         ]
       }
     },
+    methods: {
+      handleLogout() {
+        this.$store.commit('authenticate', false)
+      }
+    },
     components: {
       ...Global,
+      ...FormElements,
       Login,
       MainHeader,
     }
