@@ -6,7 +6,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'build.js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
   module: {
@@ -41,17 +41,29 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
     }
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true,
+    // noInfo: true,
   },
   devtool: '#eval-source-map',
   plugins: [
     new HtmlWebpackPlugin({
+      hash: true,
+      inject: false,
       template: 'src/index.html',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js',
+      minChunks(module) {
+        if(module.resource && (/^.*\.(css|scss)$/).test(module.resource)) {
+          return false;
+        }
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      },
     }),
   ],
 }

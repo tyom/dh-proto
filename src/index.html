@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Hub Prototype</title>
+    <script src="<%= htmlWebpackPlugin.files.chunks.vendor.entry %>"></script>
   </head>
   <body>
     <div id="app">
@@ -22,5 +24,6 @@
       </main>
       <global-footer></global-footer>
     </div>
+    <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>
