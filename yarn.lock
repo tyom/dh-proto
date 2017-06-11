@@ -1607,9 +1607,9 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-"dit-vue@github:tyom/dit-vue#v1.0.1":
-  version "1.0.0"
-  resolved "https://codeload.github.com/tyom/dit-vue/tar.gz/35818bcb5d54898fd075c761d3d092e5dd47cb89"
+"dit-vue@github:tyom/dit-vue#v1.1":
+  version "1.0.2"
+  resolved "https://codeload.github.com/tyom/dit-vue/tar.gz/1c1069d7c30913f4372fb53ed9a24b27706ba0a9"
   dependencies:
     babel-core "^6.0.0"
     babel-loader "^6.0.0"
@@ -1619,6 +1619,7 @@ diffie-hellman@^5.0.0:
     css-loader "^0.25.0"
     highlight.js "^9.11.0"
     html-webpack-plugin "^2.28.0"
+    include-media "^1.4.9"
     lodash "^4.17.4"
     node-sass "^4.5.2"
     npm-run-all "^4.0.2"
@@ -2369,6 +2370,10 @@ ieee754@^1.1.4:
 in-publish@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/in-publish/-/in-publish-2.0.0.tgz#e20ff5e3a2afc2690320b6dc552682a9c7fadf51"
+
+include-media@^1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/include-media/-/include-media-1.4.9.tgz#d0020b7be3eb2d54868a20943595ce380e0bc43b"
 
 indent-string@^2.1.0:
   version "2.1.0"
