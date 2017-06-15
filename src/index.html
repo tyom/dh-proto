@@ -9,20 +9,24 @@
   <body>
     <div id="app">
       <global-header>
-        <router-link to="/" class="logo">
-          <h1 class="global-header__title">Data Hub</h1>
-        </router-link>
+        <h1>
+          <router-link to="/" class="logo">
+            DIT <span>Data Hub</span>
+          </router-link>
+          <phase-tag phase="alpha"></phase-tag>
+        </h1>
+        <template slot="nav">
+          <router-link to="/" v-if="$store.state.isAuthenticated">Dashboard</router-link>
+          <router-link to="/support">Support</router-link>
+          <router-link to="/logout" v-if="$store.state.isAuthenticated">Log out</router-link>
+          <router-link to="/login" v-else>Log in</router-link>
+        </template>
       </global-header>
       <main>
-        <container>
-          <phase-banner :tag="phase">
-            This is a new service – your <a href="#">feedback</a> will help us to improve it.
-          </phase-banner>
-
+        <div class="container">
           <router-view></router-view>
-        </container>
+        </div>
       </main>
-      <global-footer></global-footer>
     </div>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>

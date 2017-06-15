@@ -1,6 +1,6 @@
 <template>
   <main-header>
-    <h1>Welcome, Alex!</h1>
+    <h1>Support page</h1>
   </main-header>
 </template>
 

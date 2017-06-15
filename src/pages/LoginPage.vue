@@ -34,11 +34,16 @@
     methods: {
       handleLogin() {
         const isAuthenticated = this.password === 'password'
-        this.$store.commit('authenticate', isAuthenticated)
 
-        this.errors = [
-          'Your email or password is incorrect. Most likely password.'
-        ]
+        if (isAuthenticated) {
+          this.$store.commit('authenticate', true)
+          this.$router.push('/')
+        } else {
+          this.errors = [
+            'Your email or password is incorrect. Most likely password.'
+          ]
+        }
+
       },
     }
   }

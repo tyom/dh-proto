@@ -13,8 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dit-vue": "github:tyom/dit-vue#v1.1",
+    "dit-vue": "github:tyom/dit-vue#v1.2.0",
     "vue": "^2.3.4",
+    "vue-breadcrumbs": "^1.0.0",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
     "vuex-persistedstate": "^1.4.1",

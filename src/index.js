@@ -1,47 +1,18 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
-import createPersistedState from 'vuex-persistedstate'
-import VueRouter from 'vue-router'
+import VueBreadcrumbs from 'vue-breadcrumbs'
 import {Global, Layout} from 'dit-vue'
 
-import IndexPage from './pages/IndexPage.vue'
+import router from './router'
+import store from './store'
 
 import './styles.scss'
 
-Vue.use(Vuex)
-Vue.use(VueRouter)
-
-const state = {
-  isAuthenticated: false,
-}
-
-const mutations = {
-  authenticate (state, isSuccess) {
-    state.isAuthenticated = isSuccess
-  },
-}
-
-const store = new Vuex.Store({
-  state,
-  mutations,
-  plugins: [createPersistedState()],
-})
-
-const router = new VueRouter({
-  mode: 'hash',
-  routes: [
-    { path: '/', component: IndexPage },
-    { path: '*', redirect: '/' }
-  ]
-})
+Vue.use(VueBreadcrumbs)
 
 new Vue({
   store,
   router,
   el: '#app',
-  data: {
-    phase: 'beta',
-  },
   components: {
     ...Global,
     ...Layout,
