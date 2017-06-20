@@ -7,27 +7,7 @@
     <script src="<%= htmlWebpackPlugin.files.chunks.vendor.entry %>"></script>
   </head>
   <body>
-    <div id="app">
-      <global-header>
-        <h1>
-          <router-link to="/" class="logo">
-            DIT <span>Data Hub</span>
-          </router-link>
-          <phase-tag phase="alpha"></phase-tag>
-        </h1>
-        <template slot="nav">
-          <router-link to="/" v-if="$store.state.isAuthenticated">Dashboard</router-link>
-          <router-link to="/support">Support</router-link>
-          <router-link to="/logout" v-if="$store.state.isAuthenticated">Log out</router-link>
-          <router-link to="/login" v-else>Log in</router-link>
-        </template>
-      </global-header>
-      <main>
-        <div class="container">
-          <router-view></router-view>
-        </div>
-      </main>
-    </div>
+    <div id="app"></div>
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>

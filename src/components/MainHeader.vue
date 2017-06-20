@@ -1,7 +1,9 @@
 <template>
   <header class="main-header">
-    <breadcrumbs :items="breadcrumbs"></breadcrumbs>
-    <slot></slot>
+    <div class="container">
+      <breadcrumbs :items="breadcrumbs"></breadcrumbs>
+      <slot></slot>
+    </div>
   </header>
 </template>
 
@@ -21,7 +23,11 @@
             url,
           }
         })
-        trail[trail.length-1].url = null // remove url from current page
+        if (trail.length === 1) {
+          // remove url from current page
+//          trail[trail.length-1].url = null
+          trail.pop()
+        }
         return trail
       }
     },
@@ -29,17 +35,20 @@
 </script>
 
 <style lang="scss">
+  $top-padding: 50px;
+
   .main-header {
-    padding: 30px 0;
-    border-bottom: 4px solid #ddd;
+    padding: $top-padding 0 30px;
+    background-color: #dee0e2;
 
     h1 {
       margin: 0;
+      font-size: 2.2em;
     }
 
     .breadcrumbs {
-      margin: -20px 0 30px;
-      border-bottom: 1px solid #ddd;
+      margin: ($top-padding - 90) 0 30px;
+      border-bottom: 1px solid #bbb;
       padding-bottom: 10px;
     }
   }

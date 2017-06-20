@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dit-vue": "github:tyom/dit-vue#v1.2.0",
+    "dit-vue": "github:tyom/dit-vue#v1.3.1",
     "vue": "^2.3.4",
     "vue-breadcrumbs": "^1.0.0",
     "vue-router": "^2.5.3",

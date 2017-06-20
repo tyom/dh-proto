@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import IndexPage from './pages/IndexPage.vue'
+import AuthenticatedPage from './pages/AuthenticatedPage.vue'
+import CompanyPage from './pages/CompanyPage.vue'
 import LoginPage from './pages/LoginPage.vue'
 import SupportPage from './pages/SupportPage.vue'
 
@@ -14,11 +16,24 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: IndexPage,
+      component: AuthenticatedPage,
       meta: {
         requiresAuth: true,
-        breadcrumb: 'Home page',
+        breadcrumb: 'Home',
       },
+      children: [
+        {
+          path: '',
+          component: IndexPage,
+        },
+        {
+          path: '/company',
+          component: CompanyPage,
+          meta: {
+            breadcrumb: 'Company',
+          },
+        },
+      ]
     },
     {
       path: '/support',

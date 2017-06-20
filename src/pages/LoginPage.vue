@@ -1,10 +1,13 @@
 <template>
-  <div class="login">
-    <h2 class="login__heading">Log in</h2>
-    <ul class="errors" v-if="errors.length">
-      <li v-for="error in errors">{{error}}</li>
-    </ul>
-    <form class="login__body" @submit.prevent="handleLogin">
+  <article class="content">
+    <main-header>
+      <h1>Log in</h1>
+    </main-header>
+
+    <form class="container" @submit.prevent="handleLogin">
+      <ul class="errors" v-if="errors.length">
+        <li v-for="error in errors">{{error}}</li>
+      </ul>
       <form-group label="Email" hint="Any email">
         <dit-input name="login" autofocus v-model="login"/>
       </form-group>
@@ -13,11 +16,12 @@
       </form-group>
       <dit-button variant="primary">Submit</dit-button>
     </form>
-  </div>
+  </article>
 </template>
 
 <script>
   import {FormElements} from 'dit-vue'
+  import MainHeader from '../components/MainHeader.vue'
 
   export default {
     name: 'login',
@@ -30,6 +34,7 @@
     },
     components: {
       ...FormElements,
+      MainHeader,
     },
     methods: {
       handleLogin() {
@@ -50,16 +55,6 @@
 </script>
 
 <style lang="scss">
-  .login {
-    max-width: 40em;
-    margin: 50px auto;
-  }
-
-  .login__heading {
-    font-size: 2em;
-    margin: 0;
-  }
-
   .errors {
     border: 4px solid #9a1e20;
     background-color: lighten(#9a1e20, 60);
