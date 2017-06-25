@@ -1607,9 +1607,9 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-"dit-vue@github:tyom/dit-vue#v1.2.0":
-  version "1.2.0"
-  resolved "https://codeload.github.com/tyom/dit-vue/tar.gz/69054438ea55ae13eddc800cbb4a62d72435b2b2"
+"dit-vue@github:tyom/dit-vue#v1.3.1":
+  version "1.3.1"
+  resolved "https://codeload.github.com/tyom/dit-vue/tar.gz/217169a69894171ac50a447e3f954b3973279084"
   dependencies:
     babel-core "^6.0.0"
     babel-loader "^6.0.0"
@@ -1910,6 +1910,12 @@ faye-websocket@~0.11.0:
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.1.tgz#f0efe18c4f56e4f40afc7e06c719fd5ee6188f38"
   dependencies:
     websocket-driver ">=0.5.1"
+
+file-loader@^0.11.2:
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.11.2.tgz#4ff1df28af38719a6098093b88c82c71d1794a34"
+  dependencies:
+    loader-utils "^1.0.2"
 
 filename-regex@^2.0.0:
   version "2.0.1"

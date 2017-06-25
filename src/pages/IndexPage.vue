@@ -2,11 +2,7 @@
   <article class="content">
     <main-header>
       <h1>Welcome, Alex!</h1>
-      <dit-input
-        name="search"
-        placeholder="Search for company name or contact"
-        autofocus
-      ></dit-input>
+      <search-bar style="max-width: 800px" placeholder="Search for company name or contact"></search-bar>
     </main-header>
     <div class="container">
       <div class="last-few-days">
@@ -54,6 +50,7 @@
 <script>
   import {FormElements} from 'dit-vue'
   import MainHeader from '../components/MainHeader.vue'
+  import SearchBar from '../components/SearchBar.vue'
 
   export default {
     data() {
@@ -77,6 +74,7 @@
     },
     components: {
       MainHeader,
+      SearchBar,
       ...FormElements,
     },
   }
