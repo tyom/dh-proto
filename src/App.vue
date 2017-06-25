@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    <global-header>
-      <h1>
-        <router-link to="/" class="logo">
-          DIT <span>Data Hub</span>
-        </router-link>
-        <phase-tag phase="alpha"></phase-tag>
-      </h1>
+    <global-header title="Data Hub" title-link="/">
       <template slot="nav">
         <router-link to="/" v-if="$store.state.isAuthenticated">Dashboard</router-link>
         <router-link to="/support">Support</router-link>

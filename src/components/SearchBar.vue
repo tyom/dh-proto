@@ -3,6 +3,7 @@
     <dit-input
       name="search"
       class="search-bar__input"
+      autocomplete="off"
       autofocus
       :placeholder="placeholder"
     ></dit-input>
@@ -40,10 +41,6 @@
   .search-bar {
     position: relative;
     font-size: $input-size;
-
-    * + & {
-      margin-top: 8px;
-    }
   }
 
   .search-bar__input {

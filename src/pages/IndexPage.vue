@@ -1,8 +1,8 @@
 <template>
   <article class="content">
     <main-header>
-      <h1>Welcome, Alex!</h1>
-      <search-bar style="max-width: 800px" placeholder="Search for company name or contact"></search-bar>
+      <h1>Search companies and contacts</h1>
+      <search></search>
     </main-header>
     <div class="container">
       <div class="last-few-days">
@@ -50,7 +50,7 @@
 <script>
   import {FormElements} from 'dit-vue'
   import MainHeader from '../components/MainHeader.vue'
-  import SearchBar from '../components/SearchBar.vue'
+  import Search from '../components/Search.vue'
 
   export default {
     data() {
@@ -74,7 +74,7 @@
     },
     components: {
       MainHeader,
-      SearchBar,
+      Search,
       ...FormElements,
     },
   }
