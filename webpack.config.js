@@ -34,6 +34,11 @@ module.exports = {
         }
       },
       {
+        test: /\.yaml$/,
+        include: path.resolve('data'),
+        loader: 'json-loader!yaml-loader',
+      },
+      {
         test: /\.s?css$/,
         loader: 'vue-style-loader!css-loader?sourceMap!sass-loader?sourceMap!postcss-loader?sourceMap'
       },

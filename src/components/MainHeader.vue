@@ -40,6 +40,7 @@
   .main-header {
     padding: $top-padding 0 30px;
     background-color: #dee0e2;
+    margin-bottom: 30px;
 
     h1 {
       margin: 0;

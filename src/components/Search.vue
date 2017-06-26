@@ -36,11 +36,8 @@
       }
     },
     methods: {
-      async handleSearch () {
-        const response = await fetch('/api/companies.json')
-        const data = await response.json()
-        this.results = data.companies
-        console.log(this.results)
+      handleSearch () {
+        this.results = this.$store.state.search.companies
       }
     },
     components: {

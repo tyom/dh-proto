@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import IndexPage from './pages/IndexPage.vue'
+import DashboardPage from './pages/DashboardPage.vue'
 import AuthenticatedPage from './pages/AuthenticatedPage.vue'
 import CompanyPage from './pages/CompanyPage.vue'
 import LoginPage from './pages/LoginPage.vue'
@@ -24,7 +24,7 @@ const router = new VueRouter({
       children: [
         {
           path: '',
-          component: IndexPage,
+          component: DashboardPage,
         },
         {
           path: '/company',
