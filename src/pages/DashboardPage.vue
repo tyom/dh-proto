@@ -5,7 +5,7 @@
       <search></search>
     </main-header>
     <div class="container">
-      <recent-activity></recent-activity>
+      <recent-activity title="In the last 15 days"></recent-activity>
     </div>
   </article>
 </template>

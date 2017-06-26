@@ -6,32 +6,38 @@
       <div class="panel">
         <div class="panel__header">
           <h3 class="panel__title">Interactions</h3>
-          <p class="panel__summary">{{interactions.length}} interactions from {{interactionsCompanies.length}} companies</p>
+          <p class="panel__summary">{{total.interactions}} interactions from {{interactionsCompanies.length}} companies</p>
         </div>
         <ul>
-          <li class="interactions__item" v-for="int in interactionsTruncated">
-            <span class="interactions__item-company">
-              <router-link to="company">{{int.company}}</router-link>
-            </span>
-            <span class="interactions__item-subject"><strong>{{int.subject}}</strong></span>
+          <li class="interactions__item" v-for="item in interactions">
+            <router-link class="interactions__item-company" :to="`company/${item.company}`">
+              {{item.company}}
+            </router-link>
+            <span class="interactions__item-subject"><strong>{{item.subject}}</strong></span>
           </li>
-          <li class="interactions__item" v-if="interactions.length > 5">
-            <a href="#">» Show {{interactions.length - interactionsTruncated.length}} more</a>
+          <li class="interactions__item" v-if="!isInteractionsExpanded && total.interactions > 5">
+            <a href="#" @click.prevent="isInteractionsExpanded = true">
+              » Show {{total.interactions - interactions.length}} more
+            </a>
           </li>
         </ul>
       </div>
       <div class="panel">
         <div class="panel__header">
           <h3 class="panel__title">Contacts</h3>
-          <p class="panel__summary">{{contacts.length}} contacts from {{contactsCompanies.length}} companies</p>
+          <p class="panel__summary">{{total.contacts}} contacts from {{contactsCompanies.length}} companies</p>
         </div>
         <ul>
-          <li class="interactions__item" v-for="int in contactsTruncated">
-            <span class="interactions__item-company"><a href="#">{{int.company}}</a></span>
-            <span class="interactions__item-subject"><strong>{{int.subject}}</strong></span>
+          <li class="interactions__item" v-for="item in contacts">
+            <router-link class="interactions__item-company" :to="`company/${item.company}`">
+              {{item.company}}
+            </router-link>
+            <span class="interactions__item-subject"><strong>{{item.subject}}</strong></span>
           </li>
-          <li class="interactions__item" v-if="interactions.length > 5">
-            <a href="#">» Show {{contacts.length - contactsTruncated.length}} more</a>
+          <li class="interactions__item" v-if="!isContactsExpanded && total.contacts > 5">
+            <a href="#" @click.prevent="isContactsExpanded = true">
+              » Show {{total.contacts - contacts.length}} more
+            </a>
           </li>
         </ul>
       </div>
@@ -47,27 +53,40 @@
     name: 'recent-activity',
     data() {
       return {
-        interactions: recentActivity.interactions,
-        interactionsTruncated: this.truncateList(recentActivity.interactions, 5),
-        contacts: recentActivity.contacts,
-        contactsTruncated: this.truncateList(recentActivity.contacts, 5),
+        total: {
+          interactions: recentActivity.interactions.length,
+          contacts: recentActivity.contacts.length,
+        },
+        isInteractionsExpanded: false,
+        isContactsExpanded: false,
       }
     },
     computed: {
+      interactions() {
+        if (this.isInteractionsExpanded) {
+          return recentActivity.interactions
+        }
+        return [...recentActivity.interactions].slice(0, this.truncationLength)
+      },
+      contacts() {
+        if (this.isContactsExpanded) {
+          return recentActivity.contacts
+        }
+        return [...recentActivity.contacts].slice(0, this.truncationLength)
+      },
       interactionsCompanies() {
-        return uniq(this.interactions.map(i => i.company))
+        return uniq(recentActivity.interactions.map(i => i.company))
       },
       contactsCompanies() {
-        return uniq(this.contacts.map(i => i.company))
-      }
-    },
-    methods: {
-      truncateList(list, truncate) {
-        return [...list].slice(0, truncate)
+        return uniq(recentActivity.contacts.map(i => i.company))
       }
     },
     props: {
       title: String,
+      truncationLength: {
+        type: Number,
+        default: 5,
+      },
     }
   }
 </script>

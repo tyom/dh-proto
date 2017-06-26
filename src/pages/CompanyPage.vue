@@ -1,7 +1,7 @@
 <template>
   <article class="content">
     <main-header>
-      <h1>Samsung</h1>
+      <h1>{{title}}</h1>
     </main-header>
     <div class="container">
 
@@ -14,6 +14,11 @@
   import MainHeader from '../components/MainHeader.vue'
 
   export default {
+    data() {
+      return {
+        title: this.$route.params.name
+      }
+    },
     components: {
       MainHeader,
       ...FormElements,

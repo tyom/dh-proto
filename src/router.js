@@ -27,7 +27,7 @@ const router = new VueRouter({
           component: DashboardPage,
         },
         {
-          path: '/company',
+          path: '/company/:name',
           component: CompanyPage,
           meta: {
             breadcrumb: 'Company',
